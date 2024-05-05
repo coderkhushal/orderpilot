@@ -1,16 +1,15 @@
 
-# SVGWorld
+# Orderpilot
 
-A one Stop Solution to get all your SVGs. 
+Making ordering easy. 
 
 
 ## Tech Stack
 
  
-- **Frontend Framework:** React
-- **Styling:**  MaterialUI
-- **Backend** Nodejs
-- **WebScraping** Puppeteer and Browserless.io
+- **Frontend Framework:** Next js
+- **Styling:**  Shadcn , tailwindCSS
+- **Ai Generated Response** CopilotKit and Open ai 
   
 
 
