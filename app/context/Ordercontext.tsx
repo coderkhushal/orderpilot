@@ -68,7 +68,8 @@ const Orderstate= ({children}:{children: React.ReactNode})=>{
     const doneorder=(index: number)=>{
         let temp= orders
         temp[index].done = true;
-        setOrders(temp)
+        
+        setOrders((value)=>temp)
     
     }
     return(
