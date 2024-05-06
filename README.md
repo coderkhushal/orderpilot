@@ -42,5 +42,8 @@ Start React application
 ```
 go to localhost:3000/main to view the client side and localhost:3000/orders to view orders pending 
 
+![image](https://github.com/coderkhushal/orderpilot/assets/137866759/6bbffc8b-aa7a-47f0-b277-8cc3301f732c)
+
+![image](https://github.com/coderkhushal/orderpilot/assets/137866759/703b1173-ad05-4230-8fac-860e03406c0d)
 
 
