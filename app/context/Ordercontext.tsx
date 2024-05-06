@@ -3,7 +3,7 @@ import { Children, createContext, useContext, useState } from "react";
 
 type order={
     name: string, 
-    quantity: number
+    quantity: string
     done: boolean
 }
 interface Ordercontexttype{
@@ -29,33 +29,33 @@ export const Ordercontext= createContext<Ordercontexttype>({
 const Orderstate= ({children}:{children: React.ReactNode})=>{
     const [orders,setOrders]=useState<order[]>([{
         name: "Pizza",
-        quantity: 2,
+        quantity: "2",
         done: false
 
     },
     {
         name: "Burger",
-        quantity: 1,
+        quantity: "1",
         done: false
     },
     {
         name: "Pasta",
-        quantity: 3,
+        quantity: "3",
         done: false
     },
     {
         name: "Noodles",
-        quantity: 1,
+        quantity: "1",
         done: false
     },
     {
         name: "French Fries",
-        quantity: 2,
+        quantity: "2",
         done: false
     },
     {
         name: "Sandwich",
-        quantity: 1,
+        quantity: "1",
         done: false
     },
 ]);

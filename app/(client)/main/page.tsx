@@ -10,45 +10,36 @@ import {
 } from "@copilotkit/react-core";
 import { CopilotPopup } from "@copilotkit/react-ui";
 import "@copilotkit/react-ui/styles.css";
+import { useorder } from '@/app/context/Ordercontext';
 const MainPage = () => {
-  const [Todos, setTodos] = useState<{ title: string, description: string }[]>([{title:"demo", description:"demo description"}]);
-  const [title,settitle] = useState<string>("");
-  const [description,setdescription] = useState<string>("");
+   const {orders, addOrder} =useorder()
+  const [name,setname] = useState<string>("");
+  const [quantity,setquantity] = useState<string>("0");
 
   useCopilotReadable({
-    description: "The user's todo list.",
-    value: Todos,
+    description: "The user's order list.",
+    value: orders,
   });
   useCopilotAction({
-    name: "update todo list",
-    description: "Add a new todo to the list",
+    name: "update orders list",
+    description: "Add a new order to the list",
     parameters: [
       {
-        name: 'title',
-        description: title,
+        name: 'name',
+        description: name,
       },
       {
-        name: 'description',
-        description: description
+        name: 'quantity',
+        description: quantity.toString()
       }
     ],
     handler: (item) => {
-      setTodos([...Todos, item])
+      addOrder({ name: name, quantity: quantity.toString(), done: false })
 
     },
     render: "Updating the todo list...",
   })
-  const addTodo= async()=>{
-    if(title=="" || description=="") return;
-    setTodos([...Todos, {title,description}])
-    settitle("")
-    setdescription("")
-  }
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      addTodo();
-    }
-  };
+
   return (
     <div>
       <h1 className='w-full font-semibold text-center text-3xl'>Welcome to Order Pilot</h1>
