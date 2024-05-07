@@ -1,10 +1,19 @@
-import Image from "next/image";
-import Link from "next/link";
+export const metadata = {
+  title: 'Home - Simple',
+  description: 'Page description',
+}
+
+import Hero from '@/components/hero'
+import Features from '@/components/features'
+import FeaturesBlocks from '@/components/feature-blocks'
+import Testimonials from '@/components/testimonials'
+import Newsletter from '@/components/newsletter'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Link href={"/main"}>go to main page</Link>
-    </main>
-  );
+    <>
+      <Hero />
+      <Features />
+    </>
+  )
 }

@@ -11,6 +11,7 @@ interface Ordercontexttype{
     addOrder: (order: order)=> void,
     removeOrder: (order: order)=> void
     doneorder: (index: number)=> void
+    menu: {name: string, price: number}[]
 
 
 }
@@ -18,7 +19,8 @@ export const Ordercontext= createContext<Ordercontexttype>({
     orders: [],
     addOrder:()=>{},
     removeOrder:()=>{},
-    doneorder:()=>{}
+    doneorder:()=>{},
+    menu: []
     
 
 })
@@ -27,39 +29,150 @@ export const Ordercontext= createContext<Ordercontexttype>({
 
 
 const Orderstate= ({children}:{children: React.ReactNode})=>{
-    const [orders,setOrders]=useState<order[]>([{
-        name: "Pizza",
-        quantity: "2",
-        done: false
+    const [menu, setmenu] = useState<{name:string , price: number}[]>([
+        {
+            name: "pizza",
+            price: 10
+        },
+        {
+            name: "burger",
+            price: 5
+        },
+        {
+            name: "fries",
+            price: 3
+        },
+        {
+            name: "coke",
+            price: 2
+        },
+        {
+            name: "salad",
+            price: 4
+        },
+        {
+            name: "icecream",
+            price: 3
+        },
+        {
+            name: "cake",
+            price: 6
+        },
+        {
+            name: "donut",
+            price: 2
+        },
+        {
+            name: "sandwich",
+            price: 5
+        },
+        {
+            name: "hotdog",
+            price: 4
+        },
+        {
+            name: "nuggets",
+            price: 5
+        },
+        {
+            name: "pasta",
+            price: 7
+        },
+        {
+            name: "coffee",
+            price: 2
+        },
+        {
+            name: "tea",
+            price: 1
+        },
+        {
+            name: "milkshake",
+            price: 4
+        },
+        {
+            name: "smoothie",
+            price: 3
+        },
+        {
+            name: "juice",
+            price: 2
+        },
+        {
+            name: "water",
+            price: 1
+        },
+        {
+            name: "beer",
+            price: 5
+        },
+        {
+            name: "wine",
+            price: 6
+        },
+        {
+            name: "whiskey",
+            price: 7
+        },
+        {
+            name: "vodka",
+            price: 6
+        },
+        {
+            name: "rum",
+            price: 5
+        },
+        {
+            name: "gin",
+            price: 4
+        },
+        {
+            name: "tequila",
+            price: 7
+        },
+        {
+            name: "brandy",
+            price: 6
+        },
+        {
+            name: "champagne",
+            price: 8
+        },
+        {
+            name: "soda",
+            price: 1
+        },
+        {
+            name: "lemonade",
+            price: 2
+        },
+        {
+            name: "margarita",
+            price: 6
+        },
+        {
+            name: "mojito",
+            price: 5
+        },
+        {
+            name: "cosmopolitan",
+            price: 7
+        },
+        {
+            name: "martini",
+            price: 6
+        },
+        {
+            name: "mimosa",
+            price: 5
+        },
 
-    },
-    {
-        name: "Burger",
-        quantity: "1",
-        done: false
-    },
-    {
-        name: "Pasta",
-        quantity: "3",
-        done: false
-    },
-    {
-        name: "Noodles",
-        quantity: "1",
-        done: false
-    },
-    {
-        name: "French Fries",
-        quantity: "2",
-        done: false
-    },
-    {
-        name: "Sandwich",
-        quantity: "1",
-        done: false
-    },
-]);
+
+
+    ])
+    const [orders,setOrders]=useState<order[]>([]);
     const addOrder=(order: order)=>{
+        console.log([...orders,order])
         setOrders([...orders,order])
     }
     const removeOrder=(order: order)=>{
@@ -73,7 +186,7 @@ const Orderstate= ({children}:{children: React.ReactNode})=>{
     
     }
     return(
-        <Ordercontext.Provider value={{orders, addOrder,doneorder, removeOrder}}>
+        <Ordercontext.Provider value={{orders, addOrder ,menu,doneorder, removeOrder}}>
             {children}
         </Ordercontext.Provider>
     )
