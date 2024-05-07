@@ -1,7 +1,8 @@
 
 # Orderpilot
 
-Making ordering easy. 
+OrderPilot is a AI powered web app in which user can interact with chat bot and give orders to restraunt . This saves time and manpower making the business more profitable.
+
 ## Tech Stack
  
 - **Frontend Framework:** Next js
