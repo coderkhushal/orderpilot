@@ -14,12 +14,12 @@ export default function RootLayout({children}:{children: React.ReactNode}) {
     <CopilotKit url="/api/copilotkit">
         <CopilotPopup
           instructions={
-            "Help the user manage a todo list. If the user provides a high level goal, " +
+            "Help the user to give orders. If the user provides a order name and quantity, " +
             "break it down into a few specific tasks and add them to the list"
           }
           defaultOpen={true}
           labels={{
-            title: "Todo List Copilot",
+            title: "OrderPilot",
             initial: "Hi you! 👋What do you want to order.",
           }}
           clickOutsideToClose={true}
